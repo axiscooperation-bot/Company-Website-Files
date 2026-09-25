@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=2" />
+  <link rel="stylesheet" href="styles.css?v=3" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -17,7 +17,7 @@
   <header class="site-header" id="top">
     <div class="container header-inner">
       <a class="brand" href="#top" aria-label="Axis Cooperation home">
-        <img class="brand-mark" src="picture002.png" alt="" />
+        <img class="brand-mark" src="picture002.png" alt="Axis Cooperation Logo" />
         <span class="brand-text">
           <strong>Axis Cooperation Ltd</strong>
         </span>
@@ -30,14 +30,19 @@
       <nav class="site-nav" id="site-nav" aria-label="Primary">
         <a href="#about">About</a>
         <a href="#magazine">Magazine</a>
+        <a href="#submit-article">Submit Article</a>
         <a href="#scholarships">Scholarships</a>
         <a href="#partnerships">Partnerships</a>
-        <a href="#contact" class="nav-cta">Contact Us</a>
+        <a href="#contact" class="nav-cta">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          Contact Us
+        </a>
       </nav>
     </div>
   </header>
 
   <main id="main">
+    <!-- Hero Section -->
     <section class="hero" aria-label="Introduction">
       <div class="hero-slides" aria-hidden="true">
         <div class="hero-slide is-active" style="background-image: url('picture001.png');"></div>
@@ -50,69 +55,113 @@
       <div class="hero-overlay"></div>
 
       <div class="container hero-content">
-        <p class="eyebrow">Innovating education. Empowering tomorrow.</p>
-        <h1>A national stage for student innovators — and a path to scholarships.</h1>
-        <p class="hero-lead">
-          Axis Cooperation Ltd, based in Kampala, runs <em>Sunrise Innovation Magazine</em>: a national publication that celebrates secondary-school science, technology, and creative projects, then connects outstanding work to partner universities and tertiary institutions.
+        <p class="eyebrow reveal">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          Innovating education. Empowering tomorrow.
         </p>
-        <div class="hero-actions">
-          <a class="btn btn-gold" href="#magazine">Submit a project</a>
-          <a class="btn btn-ghost" href="#partnerships">Partner with us</a>
+        <h1 class="reveal reveal-delay-1">Inspiring young minds to imagine, build, and lead.</h1>
+        <p class="hero-lead reveal reveal-delay-2">
+          Axis Cooperation Ltd is a Uganda-based education and innovation organisation inspiring secondary-school students through creative thinking, project-based learning, mentorship, and practical programmes that turn bold ideas into solutions.
+        </p>
+        <div class="hero-actions reveal reveal-delay-3">
+          <a class="btn btn-gold" href="#submit-article">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+            Submit a project
+          </a>
+          <a class="btn btn-ghost" href="#partnerships">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            Partner with us
+          </a>
         </div>
-        <dl class="hero-stats">
+        <dl class="hero-stats reveal reveal-delay-4">
           <div>
-            <dt>Learners invited</dt>
+            <div class="stat-icon-wrap">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+              <dt>Learners invited</dt>
+            </div>
             <dd>S.1–S.6</dd>
           </div>
           <div>
-            <dt>Project categories</dt>
+            <div class="stat-icon-wrap">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+              <dt>Project categories</dt>
+            </div>
             <dd>5</dd>
           </div>
           <div>
-            <dt>Publication cycle</dt>
+            <div class="stat-icon-wrap">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              <dt>Publication cycle</dt>
+            </div>
             <dd>2026–27</dd>
           </div>
         </dl>
       </div>
     </section>
 
+    <!-- About Section -->
     <section class="about" id="about">
       <div class="container about-grid">
         <div class="about-copy">
-          <p class="eyebrow">About us</p>
-          <h2>Axis Cooperation Ltd exists to spotlight talent and open tertiary doors.</h2>
-          <p>
-            We work with headteachers, science-club patrons, ICT teachers, and school administrations across Uganda. Through the Sunrise Innovation Magazine Secretariat, we document authentic student-led work and place it in front of fellow schools, higher education institutions, industry, and policy stakeholders.
+          <p class="eyebrow reveal">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+            About us
           </p>
-          <p>
-            Our model is school-centred first, then tertiary. Secondary schools submit innovations. Universities, vocational institutes, and scholarship bodies supply verified admissions and financial-aid information — and consider featured projects for partial or full scholarships.
+          <h2 class="reveal reveal-delay-1">Axis Cooperation Ltd exists to spotlight talent and open tertiary doors.</h2>
+          <p class="reveal reveal-delay-2">
+            Axis Cooperation Ltd equips young people, especially secondary-school students, with practical learning opportunities that grow curiosity, confidence, creative problem-solving, and innovation. We create project-based learning programmes, mentorship opportunities, innovation showcases, and school partnerships that help learners turn ideas into useful solutions for their communities.
+          </p>
+          <p class="reveal reveal-delay-2">
+            Our purpose is to make education a pathway to possibility. We support schools to nurture future-ready learners, connect student ideas with mentors and institutions, and celebrate the talent emerging across Uganda through platforms such as <em>Sunrise Innovation Magazine</em>.
           </p>
           <ul class="pillars">
-            <li>
-              <strong>Education</strong>
-              Guide S.1–S.6 learners toward higher education, career pathways, and girl-child participation in STEM.
+            <li class="reveal reveal-delay-1">
+              <div class="pillar-header">
+                <span class="pillar-icon">
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                </span>
+                <strong>Education</strong>
+              </div>
+              Provide S.1–S.6 learners with guidance, learning opportunities, and information that support tertiary education planning, career exploration, and inclusive STEM participation.
             </li>
-            <li>
-              <strong>Technology &amp; innovation</strong>
-              Publish prototypes, ICT solutions, agricultural work, health projects, and renewable-energy ideas.
+            <li class="reveal reveal-delay-2">
+              <div class="pillar-header">
+                <span class="pillar-icon">
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"></path><path d="M10 22h4"></path><path d="M12 2v1"></path><path d="M12 7a5 5 0 0 0-5 5c0 2 1.5 3.5 2.5 4.5.5.5.5 1.5.5 1.5h4s0-1 .5-1.5c1-1 2.5-2.5 2.5-4.5a5 5 0 0 0-5-5z"></path></svg>
+                </span>
+                <strong>Technology &amp; innovation</strong>
+              </div>
+              Document and share student-developed projects in technology, agriculture, health, renewable energy, and related fields.
             </li>
-            <li>
-              <strong>Partnership &amp; growth</strong>
-              Build a structured network between secondary schools and higher-learning partners under a shared ToR and NDA.
+            <li class="reveal reveal-delay-3">
+              <div class="pillar-header">
+                <span class="pillar-icon">
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                </span>
+                <strong>Partnership &amp; growth</strong>
+              </div>
+              Coordinate partnerships between secondary schools, higher-learning institutions, mentors, and industry partners to expand learning and progression opportunities.
             </li>
           </ul>
         </div>
-        <figure class="about-visual">
+        <figure class="about-visual reveal reveal-delay-2">
           <img src="picture001.png" alt="Axis Cooperation brand: education, technology, innovation, partnership, and growth" />
-          <figcaption>Office of the Chief Executive · Gilbert Mwanamwolho</figcaption>
+          <figcaption>
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+            On Going Projects 2026 · Sunrise Innovation Magazine
+          </figcaption>
         </figure>
       </div>
     </section>
 
+    <!-- Magazine Section -->
     <section class="magazine" id="magazine">
       <div class="container magazine-grid">
-        <div>
-          <p class="eyebrow">A flagship project</p>
+        <div class="reveal">
+          <p class="eyebrow">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            A flagship project
+          </p>
           <h2>Sunrise Innovation Magazine</h2>
           <p class="tagline">Illuminating young minds, shaping the future.</p>
           <p>
@@ -122,38 +171,71 @@
             Who can submit: secondary students (S.1–S.6), guided by a patron teacher, subject instructor, or administrator. There is no limit on the number of projects a school may send.
           </p>
           <ul class="magazine-list">
-            <li>Project summary of 300–500 words (problem, materials, method, application)</li>
-            <li>High-resolution photographs or diagrams of the prototype and team</li>
-            <li>Student names and classes, plus the guiding teacher’s contacts</li>
-            <li>Signed school endorsement, and parental media consent for minors</li>
+            <li>
+              <svg class="check-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Project summary of 300–500 words (problem, materials, method, application)</span>
+            </li>
+            <li>
+              <svg class="check-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>High-resolution photographs or diagrams of the prototype and team</span>
+            </li>
+            <li>
+              <svg class="check-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Student names and classes, plus the guiding teacher’s contacts</span>
+            </li>
+            <li>
+              <svg class="check-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Signed school endorsement, and parental media consent for minors</span>
+            </li>
           </ul>
-          <a class="btn btn-gold" href="#contact">Confirm participation</a>
+          <a class="btn btn-gold" href="#submit-article">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="15" y2="15"></line></svg>
+            Confirm participation
+          </a>
         </div>
-        <aside class="magazine-brand" aria-label="Sunrise Innovation Magazine">
+        <aside class="magazine-brand reveal reveal-delay-2" aria-label="Sunrise Innovation Magazine">
           <img src="picture003.png" alt="Sunrise Innovation Magazine logo" />
         </aside>
       </div>
 
       <div class="container">
-        <h3 class="subhead">Project categories</h3>
+        <h3 class="subhead reveal">
+          <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          Project categories
+        </h3>
         <div class="card-grid five">
-          <article class="card">
+          <article class="card reveal reveal-delay-1">
+            <div class="card-icon">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+            </div>
             <h3>Applied science &amp; engineering</h3>
             <p>Mechanics, robotics, energy generation, sanitation, and environmental prototypes.</p>
           </article>
-          <article class="card">
+          <article class="card reveal reveal-delay-2">
+            <div class="card-icon">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            </div>
             <h3>ICT &amp; software</h3>
             <p>Mobile apps, websites, automated systems, and digital tools with a clear user impact.</p>
           </article>
-          <article class="card">
+          <article class="card reveal reveal-delay-3">
+            <div class="card-icon">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-9"></path><path d="M9 10a5 5 0 0 1 6-3 5 5 0 0 1 6 3 5 5 0 0 1-6 3 5 5 0 0 1-6-3z"></path><path d="M3 13a4 4 0 0 1 5-2 4 4 0 0 1 5 2 4 4 0 0 1-5 2 4 4 0 0 1-5-2z"></path></svg>
+            </div>
             <h3>Agriculture &amp; environment</h3>
             <p>Climate-smart farming, soil preservation, waste management, and sustainability work.</p>
           </article>
-          <article class="card">
+          <article class="card reveal reveal-delay-4">
+            <div class="card-icon">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+            </div>
             <h3>Health, sanitation &amp; energy</h3>
             <p>Community health solutions and renewable-energy initiatives from school science clubs.</p>
           </article>
-          <article class="card">
+          <article class="card reveal reveal-delay-5">
+            <div class="card-icon">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </div>
             <h3>Special features &amp; essays</h3>
             <p>Girl-child leadership in STEM, career goals, and reports on global science trends.</p>
           </article>
@@ -161,29 +243,220 @@
       </div>
     </section>
 
+    <!-- NEW SECTION: Article Submission Form with Upload Attachment -->
+    <section class="submission" id="submit-article">
+      <div class="container">
+        <div class="submission-layout">
+          <!-- Submission Guide Sidebar -->
+          <div class="submission-guide reveal">
+            <p class="eyebrow">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              Submission Portal
+            </p>
+            <h2>Submit your article or innovation project.</h2>
+            <p>
+              Submit student articles, scientific project write-ups, or innovation summaries directly to the Sunrise Innovation Magazine editorial board.
+            </p>
+            <div class="guide-card">
+              <h4>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                Submission Checklist
+              </h4>
+              <ul class="guide-steps">
+                <li>
+                  <span class="step-num">1</span>
+                  <span><strong>Author &amp; School details</strong>: Enter lead student names, classes (S.1–S.6), and guiding patron teacher.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span><strong>Summary (300–500 words)</strong>: Provide background problem, methodology, materials, and community impact.</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span><strong>Attach documents / photos</strong>: Upload Word document (.docx/.doc), PDF manuscript, or project prototype photos.</span>
+                </li>
+                <li>
+                  <span class="step-num">4</span>
+                  <span><strong>Secretariat Review</strong>: Eligible projects will be scheduled for editorial feature and scholarship nomination.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Submission Form Container -->
+          <div class="submission-form-wrap reveal reveal-delay-2">
+            <form class="submission-form" id="article-submission-form" novalidate>
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label for="sub-lead-name">
+                    Student lead author(s) *
+                  </label>
+                  <input type="text" id="sub-lead-name" name="studentName" placeholder="e.g. Sarah Namugga &amp; David Okello" required />
+                </div>
+                <div class="form-group">
+                  <label for="sub-level">
+                    Class / Level *
+                  </label>
+                  <select id="sub-level" name="classLevel" required>
+                    <option value="">Select class level</option>
+                    <option value="S.1">Senior One (S.1)</option>
+                    <option value="S.2">Senior Two (S.2)</option>
+                    <option value="S.3">Senior Three (S.3)</option>
+                    <option value="S.4">Senior Four (S.4)</option>
+                    <option value="S.5">Senior Five (S.5)</option>
+                    <option value="S.6">Senior Six (S.6)</option>
+                    <option value="Multi-class">Multi-class student team</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label for="sub-school">
+                    School / Secondary Institution *
+                  </label>
+                  <input type="text" id="sub-school" name="schoolName" placeholder="e.g. Makerere College School" required />
+                </div>
+                <div class="form-group">
+                  <label for="sub-teacher">
+                    Guiding teacher / Patron name *
+                  </label>
+                  <input type="text" id="sub-teacher" name="teacherName" placeholder="e.g. Mr. Ronald Kato" required />
+                </div>
+              </div>
+
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label for="sub-email">
+                    Contact email *
+                  </label>
+                  <input type="email" id="sub-email" name="contactEmail" placeholder="teacher or school email" required autocomplete="email" />
+                </div>
+                <div class="form-group">
+                  <label for="sub-phone">
+                    Phone number *
+                  </label>
+                  <input type="tel" id="sub-phone" name="contactPhone" placeholder="0700 000 000" required />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="sub-title">
+                  Article or Project Title *
+                </label>
+                <input type="text" id="sub-title" name="articleTitle" placeholder="e.g. Solar-powered Water Filtration System for Rural Communities" required />
+              </div>
+
+              <div class="form-group">
+                <label for="sub-category">
+                  Project category *
+                </label>
+                <select id="sub-category" name="category" required>
+                  <option value="">Select category</option>
+                  <option value="Applied science & engineering">Applied science &amp; engineering</option>
+                  <option value="ICT & software">ICT &amp; software</option>
+                  <option value="Agriculture & environment">Agriculture &amp; environment</option>
+                  <option value="Health, sanitation & energy">Health, sanitation &amp; energy</option>
+                  <option value="Special features & essays">Special features &amp; essays</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="sub-summary">
+                  Article summary / Abstract *
+                  <span class="word-count-badge" id="word-count-badge">0 words (300–500 recommended)</span>
+                </label>
+                <textarea id="sub-summary" name="summary" rows="5" placeholder="Summarise problem addressed, materials used, methodology, results, and practical community application..." required></textarea>
+              </div>
+
+              <!-- Attachment Upload Feature -->
+              <div class="form-group upload-container">
+                <label>
+                  Project attachment / Manuscript *
+                  <span class="word-count-badge">PDF, Word, or Photos</span>
+                </label>
+                <div class="upload-dropzone" id="upload-dropzone" tabindex="0" role="button" aria-label="Upload attachment dropzone. Press Enter to select a file.">
+                  <div class="upload-icon">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                  </div>
+                  <div class="upload-text">Choose a file or drag &amp; drop here</div>
+                  <div class="upload-hint">Attach your complete article, research report, or prototype photo</div>
+                  <span class="upload-badge">PDF, DOCX, DOC, PNG, JPG (Max 25MB)</span>
+                  <input type="file" id="article-attachment" name="attachment" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg" style="display: none;" />
+                </div>
+
+                <!-- Attached File Display Badge -->
+                <div class="file-preview" id="file-preview" role="region" aria-label="Attached file details">
+                  <div class="file-info">
+                    <span class="file-icon">
+                      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    </span>
+                    <div class="file-meta">
+                      <span class="file-name" id="file-name">filename.pdf</span>
+                      <span class="file-size" id="file-size">0 KB</span>
+                    </div>
+                  </div>
+                  <button type="button" class="btn-remove-file" id="btn-remove-file" aria-label="Remove attached file" title="Remove attachment">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                  </button>
+                </div>
+              </div>
+
+              <label class="checkbox-label">
+                <input type="checkbox" name="declaration" required />
+                <span>I confirm that this project is authentic student work, guided by a patron teacher, and complies with Axis Cooperation publication guidelines.</span>
+              </label>
+
+              <button class="btn btn-gold" type="submit" id="btn-submit-article" style="width: 100%;">
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                Submit article for publication
+              </button>
+              <div class="submission-status" id="submission-status" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scholarships Section -->
     <section class="scholarships" id="scholarships">
       <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Outstanding Student Innovation Scholarships</p>
+        <div class="section-head reveal">
+          <p class="eyebrow">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+            Outstanding Student Innovation Scholarships
+          </p>
           <h2>Featured projects can reach university partners.</h2>
           <p>
             Axis Cooperation has invited universities and tertiary institutions to consider exceptional student work published in the magazine for partial or full scholarships. The Secretariat reviews submissions for authenticity and educational value, then nominates top-tier projects to participating higher-education partners.
           </p>
         </div>
         <div class="card-grid">
-          <article class="card">
+          <article class="card reveal reveal-delay-1">
+            <div class="card-icon">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+            </div>
             <h3>Scholarship nomination</h3>
             <p>Qualifying innovations are forwarded to partner universities for scholarship consideration — a direct reward for creative student talent.</p>
           </article>
-          <article class="card">
+          <article class="card reveal reveal-delay-2">
+            <div class="card-icon">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"></path><path d="M5 21V7l7-4 7 4v14"></path><path d="M9 10h1"></path><path d="M9 14h1"></path><path d="M14 10h1"></path><path d="M14 14h1"></path></svg>
+            </div>
             <h3>Admissions &amp; financial aid</h3>
             <p>Partner pages carry verified entry requirements, application processes, key dates, and contact channels.</p>
           </article>
-          <article class="card">
+          <article class="card reveal reveal-delay-3">
+            <div class="card-icon">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+            </div>
             <h3>Career guidance</h3>
             <p>Faculty and admissions officers contribute advice on emerging fields, technical pathways, and the move from secondary to campus.</p>
           </article>
-          <article class="card">
+          <article class="card reveal reveal-delay-4">
+            <div class="card-icon">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </div>
             <h3>Girl-child STEM</h3>
             <p>Dedicated features celebrate female student leadership in science and technology, in line with inclusive participation.</p>
           </article>
@@ -191,10 +464,14 @@
       </div>
     </section>
 
+    <!-- Partnerships Section -->
     <section class="partnerships" id="partnerships">
       <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Partnership</p>
+        <div class="section-head reveal">
+          <p class="eyebrow">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+            Partnership
+          </p>
           <h2>Two tracks: secondary schools, then higher education.</h2>
           <p>
             Partnership is governed by Terms of Reference, a non-disclosure agreement, and an institutional application. Schools remain the source of student work. Universities, tertiary institutes, and scholarship bodies supply programmes, scholarships, and optional award sponsorship.
@@ -202,8 +479,11 @@
         </div>
 
         <div class="partner-columns">
-          <div>
-            <h3>Secondary schools</h3>
+          <div class="partner-box reveal reveal-delay-1">
+            <h3>
+              <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+              Secondary schools
+            </h3>
             <p>Invitation to headteachers: join the Secondary Schools Participation &amp; Innovation Network for the 2026–2027 edition.</p>
             <ul class="plain-list">
               <li>Name a patron teacher as the institutional point of contact.</li>
@@ -213,8 +493,11 @@
             </ul>
             <p class="fine-print">Schools are encouraged to send gender-balanced teams. Plagiarism or fabricated results lead to disqualification.</p>
           </div>
-          <div>
-            <h3>Universities &amp; tertiary institutions</h3>
+          <div class="partner-box reveal reveal-delay-2">
+            <h3>
+              <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"></path><path d="M5 21V7l7-4 7 4v14"></path><path d="M9 10h1"></path><path d="M9 14h1"></path><path d="M14 10h1"></path><path d="M14 14h1"></path></svg>
+              Universities &amp; tertiary institutions
+            </h3>
             <p>The Higher Education &amp; Scholarship Partnership lets institutions speak directly to science clubs, career masters, and parents.</p>
             <ul class="plain-list">
               <li>Scholarship &amp; Admission Spotlight — one full page.</li>
@@ -225,72 +508,154 @@
           </div>
         </div>
 
-        <div class="downloads">
-          <h3>Partnership documents</h3>
+        <div class="downloads reveal">
+          <h3>
+            <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Partnership documents
+          </h3>
           <p>Download the current pack used with schools and higher-education partners.</p>
           <div class="download-row">
-            <a class="btn btn-dark" href="Sec Sch ToR.docx">Secondary school ToR</a>
-            <a class="btn btn-dark" href="Tertiary ToR.docx">Higher education ToR</a>
-            <a class="btn btn-dark" href="application-form.pdf">Partnership application</a>
-            <a class="btn btn-dark" href="NDA.docx">Non-disclosure agreement</a>
+            <a class="btn-download" href="Sec Sch ToR.docx">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              Secondary school ToR
+            </a>
+            <a class="btn-download" href="Tertiary ToR.docx">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              Higher education ToR
+            </a>
+            <a class="btn-download" href="application-form.pdf">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="15" y2="15"></line></svg>
+              Partnership application
+            </a>
+            <a class="btn-download" href="NDA.docx">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              Non-disclosure agreement
+            </a>
           </div>
         </div>
 
-        <div class="partner-cta">
+        <div class="partner-cta reveal reveal-delay-2">
           <div>
             <h3>Request a partnership briefing</h3>
             <p>Headteachers, academic registrars, admissions, and corporate communications teams can write to the Secretariat. We can meet in person or virtually to tailor a package to a recruitment cycle.</p>
           </div>
-          <a class="btn btn-gold" href="#contact">Write to the CEO’s office</a>
         </div>
       </div>
     </section>
 
+    <!-- Contact Section -->
     <section class="contact" id="contact">
       <div class="container contact-grid">
-        <div>
-          <p class="eyebrow">Contact us</p>
+        <div class="reveal">
+          <p class="eyebrow">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            Contact us
+          </p>
           <h2>Sunrise Innovation Magazine Secretariat.</h2>
           <p>Use this form for school participation, project submissions, university partnership, or scholarship enquiries. Detailed procedures and deadlines sit in the attached Terms of Reference.</p>
-          <address>
-            <p><strong>Axis Cooperation Ltd</strong><br />P.O. Box 10830<br />Kampala, Uganda</p>
-            <p>
-              <a href="mailto:axiscooperation@gmail.com">axiscooperation@gmail.com</a><br />
-              0701 087 267 · 0788 340 949
-            </p>
-            <p>Office of the Chief Executive<br />Gilbert Mwanamwolho</p>
-          </address>
+          
+          <div class="contact-info-card">
+            <div class="contact-info-list">
+              <div class="contact-info-item">
+                <span class="contact-info-icon">
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                </span>
+                <address>
+                  <p><strong>Axis Cooperation Ltd</strong><br />P.O. Box 10830<br />Kampala, Uganda</p>
+                </address>
+              </div>
+              <div class="contact-info-item">
+                <span class="contact-info-icon">
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </span>
+                <p>
+                  <a href="mailto:axiscooperation@gmail.com">axiscooperation@gmail.com</a>
+                </p>
+              </div>
+              <div class="contact-info-item">
+                <span class="contact-info-icon">
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                </span>
+                <p>
+                  0701 087 267 · 0788 340 949
+                </p>
+              </div>
+              <div class="contact-info-item">
+                <span class="contact-info-icon">
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                </span>
+                <p>Office of the Chief Executive<br />Gilbert Mwanamwolho</p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <form class="contact-form" id="contact-form" novalidate>
+        <form class="contact-form reveal reveal-delay-2" id="contact-form" novalidate>
+          <!-- Inquiry Type Selector Feature -->
+          <div class="inquiry-type-group">
+            <div class="group-title">
+              <span>Inquiry Type *</span>
+            </div>
+            <div class="inquiry-pills">
+              <label class="inquiry-pill">
+                <input type="radio" name="inquiryType" value="School Participation" checked />
+                <span>School Participation</span>
+              </label>
+              <label class="inquiry-pill">
+                <input type="radio" name="inquiryType" value="University Partnership" />
+                <span>University Partnership</span>
+              </label>
+              <label class="inquiry-pill">
+                <input type="radio" name="inquiryType" value="Project Submission" />
+                <span>Project Submission</span>
+              </label>
+              <label class="inquiry-pill">
+                <input type="radio" name="inquiryType" value="Scholarships" />
+                <span>Scholarships</span>
+              </label>
+              <label class="inquiry-pill">
+                <input type="radio" name="inquiryType" value="General Enquiry" />
+                <span>General Enquiry</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <label>
+              Full name *
+              <input type="text" name="name" required autocomplete="name" placeholder="Your full name" />
+            </label>
+            <label>
+              Institution / School *
+              <input type="text" name="institution" required placeholder="School, university or org" />
+            </label>
+          </div>
+
+          <div class="form-grid-2">
+            <label>
+              Email *
+              <input type="email" name="email" required autocomplete="email" placeholder="name@example.com" />
+            </label>
+            <label>
+              Phone number
+              <input type="tel" name="phone" placeholder="0700 000 000 (optional)" />
+            </label>
+          </div>
+
           <label>
-            Full name
-            <input type="text" name="name" required autocomplete="name" />
+            Inquiry Subject *
+            <input type="text" name="subject" required placeholder="Brief subject of your inquiry" />
           </label>
+
           <label>
-            Institution
-            <input type="text" name="institution" required />
+            Message *
+            <textarea name="message" rows="5" required placeholder="Please describe your enquiry, partnership interest, or question..."></textarea>
           </label>
-          <label>
-            Email
-            <input type="email" name="email" required autocomplete="email" />
-          </label>
-          <label>
-            I am writing about
-            <select name="topic" required>
-              <option value="">Select a topic</option>
-              <option value="school">Secondary school participation</option>
-              <option value="project">Student project submission</option>
-              <option value="university">University or tertiary partnership</option>
-              <option value="scholarship">Scholarship enquiry</option>
-              <option value="other">General enquiry</option>
-            </select>
-          </label>
-          <label>
-            Message
-            <textarea name="message" rows="5" required></textarea>
-          </label>
-          <button class="btn btn-gold" type="submit">Send message</button>
+
+          <button class="btn-contact-submit" type="submit">
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            Send message
+          </button>
           <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
         </form>
       </div>
@@ -303,6 +668,11 @@
       <p>Sunrise Innovation Magazine · 2026–2027 edition</p>
     </div>
   </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top" title="Back to top">
+    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </button>
 
   <script src="script.js"></script>
 </body>
