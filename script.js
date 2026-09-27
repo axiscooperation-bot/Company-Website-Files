@@ -22,8 +22,34 @@ document.addEventListener("DOMContentLoaded", () => {
   const fileSizeEl = document.querySelector("#file-size");
   const removeFileBtn = document.querySelector("#btn-remove-file");
   const submitArticleBtn = document.querySelector("#btn-submit-article");
+  const subRefIdInput = document.querySelector("#sub-ref-id");
+  const subDateInput = document.querySelector("#sub-date");
 
   let attachedFile = null;
+
+  // ==========================================================================
+  // EmailJS Configuration & Initialization
+  // ==========================================================================
+  const EMAILJS_CONFIG = {
+    // API Public Key provided by user
+    publicKey: "dKjsU02qSR17WwqE7",
+    // Service ID from EmailJS Dashboard (Email Services)
+    serviceId: "service_article_sub",
+    // Template ID from EmailJS Dashboard (Email Templates)
+    templateId: "template_article_sub",
+    // Optional contact form configuration
+    contactServiceId: "",
+    contactTemplateId: "",
+  };
+
+  // Initialize EmailJS SDK
+  if (typeof emailjs !== "undefined") {
+    emailjs.init({
+      publicKey: EMAILJS_CONFIG.publicKey,
+    });
+  } else {
+    console.warn("EmailJS SDK script not found. Make sure email.min.js CDN is loaded.");
+  }
 
   // Year in Footer
   if (year) {
@@ -111,9 +137,48 @@ document.addEventListener("DOMContentLoaded", () => {
     const inquiryType = formData.get("inquiryType") || "General Enquiry";
     const subject = formData.get("subject") || "your inquiry";
 
-    contactStatus.classList.add("is-success");
-    contactStatus.innerHTML = `✓ <strong>Inquiry sent successfully!</strong><br />Thank you, ${name}. Your message regarding <em>"${inquiryType}: ${subject}"</em> has been received by the Axis Cooperation Secretariat. We will get back to you shortly.`;
-    contactForm.reset();
+    // If EmailJS contact template credentials are provided, send via EmailJS
+    if (
+      typeof emailjs !== "undefined" &&
+      EMAILJS_CONFIG.contactServiceId &&
+      EMAILJS_CONFIG.contactTemplateId
+    ) {
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const originalText = submitBtn ? submitBtn.innerHTML : "Send message";
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = "0.75";
+      }
+
+      emailjs
+        .sendForm(
+          EMAILJS_CONFIG.contactServiceId,
+          EMAILJS_CONFIG.contactTemplateId,
+          contactForm,
+          EMAILJS_CONFIG.publicKey
+        )
+        .then(() => {
+          contactStatus.classList.add("is-success");
+          contactStatus.innerHTML = `✓ <strong>Inquiry sent successfully!</strong><br />Thank you, ${name}. Your message regarding <em>"${inquiryType}: ${subject}"</em> has been received by the Axis Cooperation Secretariat. We will get back to you shortly.`;
+          contactForm.reset();
+        })
+        .catch((error) => {
+          console.error("EmailJS contact form error:", error);
+          contactStatus.classList.add("is-error");
+          contactStatus.textContent = "Could not transmit inquiry via EmailJS. Please try again or contact the secretariat directly.";
+        })
+        .finally(() => {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.style.opacity = "1";
+            submitBtn.innerHTML = originalText;
+          }
+        });
+    } else {
+      contactStatus.classList.add("is-success");
+      contactStatus.innerHTML = `✓ <strong>Inquiry sent successfully!</strong><br />Thank you, ${name}. Your message regarding <em>"${inquiryType}: ${subject}"</em> has been received by the Axis Cooperation Secretariat. We will get back to you shortly.`;
+      contactForm.reset();
+    }
   });
 
   // Format File Size
@@ -150,6 +215,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     attachedFile = file;
+    // Keep fileInput.files in sync for drag-and-drop so EmailJS includes the attachment
+    if (fileInput && (!fileInput.files || fileInput.files[0] !== file)) {
+      try {
+        const dt = new DataTransfer();
+        dt.items.add(file);
+        fileInput.files = dt.files;
+      } catch (err) {
+        // Fallback for environments with strict file input restrictions
+      }
+    }
     fileNameEl.textContent = file.name;
     fileSizeEl.textContent = formatBytes(file.size);
     filePreview.classList.add("is-active");
@@ -261,27 +336,80 @@ document.addEventListener("DOMContentLoaded", () => {
       Submitting article and attachment...
     `;
 
-    setTimeout(() => {
-      const refId = "AXIS-SIM-" + Math.floor(100000 + Math.random() * 900000);
-      submissionStatus.classList.add("is-success");
+    const refId = "AXIS-SIM-" + Math.floor(100000 + Math.random() * 900000);
+    if (subRefIdInput) subRefIdInput.value = refId;
+    if (subDateInput) subDateInput.value = new Date().toLocaleString();
+
+    // Verify SDK availability
+    if (typeof emailjs === "undefined") {
+      submissionStatus.classList.add("is-error");
       submissionStatus.innerHTML = `
-        ✓ <strong>Submission Successful!</strong><br />
-        Thank you. Your article and attachment (<em>${attachedFile.name}</em>) have been securely received by the Sunrise Innovation Magazine Editorial Secretariat.<br />
-        <strong>Tracking Reference ID: ${refId}</strong>. We will review your entry and contact your guiding teacher shortly.
+        ✕ <strong>Submission service unavailable</strong><br />
+        Could not connect to the EmailJS service. Please ensure you are online and reload the page.
       `;
-
-      submissionForm.reset();
-      resetAttachment();
-      if (wordCountBadge) {
-        wordCountBadge.textContent = "0 words (300–500 recommended)";
-        wordCountBadge.style.color = "var(--muted)";
-      }
-
       submitArticleBtn.disabled = false;
       submitArticleBtn.style.opacity = "1";
       submitArticleBtn.innerHTML = originalBtnText;
-
       submissionStatus.scrollIntoView({ behavior: "smooth", block: "nearest" });
-    }, 900);
+      return;
+    }
+
+    emailjs
+      .sendForm(
+        EMAILJS_CONFIG.serviceId,
+        EMAILJS_CONFIG.templateId,
+        submissionForm,
+        EMAILJS_CONFIG.publicKey
+      )
+      .then(() => {
+        submissionStatus.classList.add("is-success");
+        submissionStatus.innerHTML = `
+          ✓ <strong>Submission Successful!</strong><br />
+          Thank you. Your article and attachment (<em>${attachedFile ? attachedFile.name : ""}</em>) have been securely sent via EmailJS to the Sunrise Innovation Magazine Editorial Secretariat.<br />
+          <strong>Tracking Reference ID: ${refId}</strong>. We will review your entry and contact your guiding teacher shortly.
+        `;
+
+        submissionForm.reset();
+        resetAttachment();
+        if (wordCountBadge) {
+          wordCountBadge.textContent = "0 words (300–500 recommended)";
+          wordCountBadge.style.color = "var(--muted)";
+        }
+      })
+      .catch((error) => {
+        console.error("EmailJS submission error:", error);
+        submissionStatus.classList.add("is-error");
+
+        const errorDetail =
+          error?.text ||
+          error?.message ||
+          (typeof error === "string" ? error : "An error occurred during transmission.");
+
+        let helperNote = "";
+        if (
+          String(errorDetail).toLowerCase().includes("service id") ||
+          String(errorDetail).toLowerCase().includes("template id") ||
+          EMAILJS_CONFIG.serviceId === "service_sunrise"
+        ) {
+          helperNote = `<div style="margin-top: 8px; font-size: 0.85rem; font-weight: normal; background: rgba(0,0,0,0.05); padding: 8px 10px; border-radius: 6px;">
+            <strong>Setup check:</strong> Please ensure your Service ID (<code>${EMAILJS_CONFIG.serviceId}</code>) and Template ID (<code>${EMAILJS_CONFIG.templateId}</code>) in <code>script.js</code> match your account in <a href="https://dashboard.emailjs.com" target="_blank" rel="noopener" style="text-decoration: underline; color: inherit;">EmailJS Dashboard</a>.
+          </div>`;
+        }
+
+        submissionStatus.innerHTML = `
+          ✕ <strong>Submission could not be completed</strong><br />
+          ${errorDetail}
+          ${helperNote}
+          <div style="margin-top: 6px; font-size: 0.82rem; font-weight: normal; opacity: 0.85;">
+            Tracking Reference: ${refId}
+          </div>
+        `;
+      })
+      .finally(() => {
+        submitArticleBtn.disabled = false;
+        submitArticleBtn.style.opacity = "1";
+        submitArticleBtn.innerHTML = originalBtnText;
+        submissionStatus.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      });
   });
 });
