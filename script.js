@@ -34,9 +34,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // API Public Key provided by user
     publicKey: "dKjsU02qSR17WwqE7",
     // Service ID from EmailJS Dashboard (Email Services)
-    serviceId: "service_article_sub",
+    serviceId: "service_fzj8k2v",
     // Template ID from EmailJS Dashboard (Email Templates)
-    templateId: "template_article_sub",
+    templateId: "template_fof1o2e",
     // Optional contact form configuration
     contactServiceId: "",
     contactTemplateId: "",
